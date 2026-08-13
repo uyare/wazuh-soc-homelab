@@ -36,8 +36,8 @@ _Default Windows logs are rarely enough for a SOC. High-fidelity telemetry is re
 
 _FIM is a core compliance requirement (PCI-DSS, HIPAA) used to catch unauthorized changes and ransomware activity._
 
-- **Target Setup:** Created a sensitive directory on the Windows VM at `C:\Finance_Data`.
-- **Wazuh Config:** Added a `<directories check_all="yes">C:\Finance_Data</directories>` block to the Windows Agent `ossec.conf`.
+- **Target Setup:** Created a sensitive directory on the Windows VM at `C:\Users\User\Downloads\Finance`.
+- **Wazuh Config:** Added a `<directories check_all="yes">C:\Users\User\Downloads\Finance</directories>` block to the Windows Agent `ossec.conf`.
 - **Validation:** Created, modified, and deleted files within the directory. Verified that the File Integrity Monitoring events successfully triggered and were displayed correctly in the Wazuh dashboard with detailed change information.
 
 ### 3. Detection Engineering: Custom Rules & MITRE ATT&CK Mapping
