@@ -20,7 +20,7 @@ The objective of this project is to build a functional Security Operations Cente
 - **Agent 1:** Windows 10
 - **Agent 2:** Ubuntu 22.04
 
-_(Note: Replace with the link to your architecture diagram)_
+[Architecture](./assets/Architecture.svg)
 
 ---
 
