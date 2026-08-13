@@ -1,0 +1,16 @@
+<!-- 
+  =============================================================================
+  Active Response: Automated IP Blocking
+  =============================================================================
+  Trigger: Fires when Rule ID 60115 is detected (e.g., SSH/Authentication Brute Force)
+  Action:  Executes 'firewall-drop' to block the source IP address on the local agent
+  Duration: 600 seconds (10 minutes)
+  MITRE ATT&CK: T1110 (Brute Force)
+  =============================================================================
+-->
+<active-response>
+  <command>firewall-drop</command>
+  <location>local</location>
+  <rules_id>60115</rules_id>
+  <timeout>600</timeout> <!-- Blocks the attacker IP for 10 minutes (600 seconds) -->
+</active-response>
