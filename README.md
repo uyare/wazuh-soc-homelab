@@ -14,13 +14,11 @@ The objective of this project is to build a functional Security Operations Cente
 - **OS:** Windows 10, Amazon Linux 2023, Ubuntu 22.04
 - **Security Concepts:** FIM, SCA, CIS Benchmarks, Active Response (SOAR), MITRE ATT&CK
 
-## 🏗️ Architecture & Lab Setup
+## 🏗️ Architecture & Lab Setup ([Architecture Diagrams](./assets/Architecture.svg))
 
 - **Manager:** Wazuh VM (Hosted on Amazon Linux 2023)
 - **Agent 1:** Windows 10
 - **Agent 2:** Ubuntu 22.04
-
-[Architecture](./assets/Architecture.svg)
 
 ---
 
@@ -55,24 +53,22 @@ _Creating custom detection logic to identify specific suspicious activities._
 _Leveraging Active Response to instantly contain threats without manual analyst intervention._
 
 - **Trigger Configuration:** Configured Wazuh to automatically block an attacker's IP address if they fail to log in 5 times within a 2-minute window.
-- **Wazuh Config:** Edited the Wazuh Manager `ossec.conf` to utilize the default `firewall-drop` script within the `<command>` block, and set the `<active-response>` block to trigger on the Rule ID associated with RDP brute-forcing.
+- **Wazuh Config:** Edited the Wazuh Manager `ossec.conf` to utilize the default `firewall-drop` script within the `<command>` block, and set the `<active-response>` block to trigger on the Rule ID associated with RDP brute-forcing - [Active Response Block](./assets/Active_Response.png)
 - **Validation:** Executed the RDP brute-force attack from the host machine. Verified that the host IP was automatically blocked by the Windows firewall and checked the Wazuh Active Response logs to confirm the automation fired successfully.
 
 ### 5. Security Configuration Assessments (SCA) & Hardening
 
 _Proactively hardening systems against vulnerabilities before attacks occur._
 
-- **Baseline Audit:** Reviewed CIS (Center for Internet Security) Benchmarks for Windows inside the Wazuh SCA dashboard.
+- **Baseline Audit:** Reviewed CIS (Center for Internet Security) Benchmarks for Windows inside the Wazuh SCA dashboard - [Baseline](./assets/SCA_Before.png).
 - **Vulnerability Simulation:** Intentionally weakened the Windows VM by enabling the Guest account, disabling the Windows Firewall, and turning off password complexity. Forced an SCA scan and documented the compliance score drop.
-- **Remediation:** Fixed the created vulnerabilities and utilized **HardeningKitty** to enforce secure configurations. Rescanned the endpoint to document a significantly improved compliance score.
+- **Remediation:** Fixed the created vulnerabilities and utilized **HardeningKitty** to enforce secure configurations. Rescanned the endpoint to document a significantly improved compliance score - [Remediation](./assets/SCA_After.png).
 
 ---
 
 ## 📊 Dashboards & Visualizations
 
 Using **Dashboards Query Language (DQL)** and **Wazuh Query Language (WQL)**, I navigated the default dashboards and created custom visualizations to easily filter and hunt through the ingested Sysmon telemetry, monitor FIM events, and track SCA compliance improvements over time.
-
-_(Note: Add links or images to your dashboard proofs here)_
 
 - [Screenshot of FIM Level 12 Alert](https://www.google.com/search?q=link)
 - [Screenshot of Mimikatz MITRE Mapping](https://www.google.com/search?q=link)
