@@ -73,6 +73,7 @@ Using **Dashboards Query Language (DQL)** and **Wazuh Query Language (WQL)**, I 
 - [Screenshot of Failed Logins](./assets/Metrics_Failed_Logins.png)
 - [Screenshot of FIM](./assets/Data_Table_FIM.png)
 - [Screenshot of SCA Compliance](./assets/Pie_Chart_SCA.png)
+- [Screenshot of Dashboard](./assets/Dashboard.png)
 
 ---
 
