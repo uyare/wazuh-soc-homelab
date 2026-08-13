@@ -14,7 +14,7 @@ The objective of this project is to build a functional Security Operations Cente
 - **OS:** Windows 10, Amazon Linux 2023, Ubuntu 22.04
 - **Security Concepts:** FIM, SCA, CIS Benchmarks, Active Response (SOAR), MITRE ATT&CK
 
-## 🏗️ Architecture & Lab Setup ([Architecture Diagrams](./assets/Architecture.svg))
+## 🏗️ Architecture & Lab Setup ([Diagram](./assets/Architecture.svg))
 
 - **Manager:** Wazuh VM (Hosted on Amazon Linux 2023)
 - **Agent 1:** Windows 10
@@ -45,7 +45,7 @@ _FIM is a core compliance requirement (PCI-DSS, HIPAA) used to catch unauthorize
 _Creating custom detection logic to identify specific suspicious activities._
 
 - **Objective:** Detect when the default Windows Guest account is enabled, which is a common persistence technique.
-- **Rule Creation:** Created a custom Wazuh rule mapped to MITRE ATT&CK technique T1078 (Valid Accounts). Added the following rule to [`local_rules.xml`](./assets/Custom_Rules_2.png):
+- **Rule Creation:** Created a custom Wazuh rule mapped to MITRE ATT&CK technique T1078 (Valid Accounts). Added the following rule [Custom Rule](./assets/Custom_Rules_2.png) to `local_rules.xml`
 - **Validation:** Enabled the Guest account on the Windows 10 endpoint via the command line and verified that a Level 12 alert successfully triggered in the Wazuh dashboard.
 
 ### 4. Automate Defense with Active Response (SOAR)
@@ -68,12 +68,11 @@ _Proactively hardening systems against vulnerabilities before attacks occur._
 
 ## 📊 Dashboards & Visualizations
 
-Using **Dashboards Query Language (DQL)** and **Wazuh Query Language (WQL)**, I navigated the default dashboards and created custom visualizations to easily filter and hunt through the ingested Sysmon telemetry, monitor FIM events, and track SCA compliance improvements over time.
+Using **Dashboards Query Language (DQL)** and **Wazuh Query Language (WQL)**, I created custom dashboards and created custom visualizations to easily filter and hunt through the ingested Sysmon telemetry, monitor FIM events, and track SCA compliance improvements over time.
 
-- [Screenshot of FIM Level 12 Alert](https://www.google.com/search?q=link)
-- [Screenshot of Mimikatz MITRE Mapping](https://www.google.com/search?q=link)
-- [Screenshot of Active Response IP Block](https://www.google.com/search?q=link)
-- [Screenshot of SCA Compliance Score](https://www.google.com/search?q=link)
+- [Screenshot of Failed Logins](./assets/Metrics_Failed_Logins.png)
+- [Screenshot of FIM](./assets/Data_Table_FIM.png)
+- [Screenshot of SCA Compliance](./assets/Pie_Chart_SCA.png)
 
 ---
 
